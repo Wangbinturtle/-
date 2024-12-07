@@ -12,6 +12,7 @@ header {
     color: white;
     padding: 10px 0;
     text-align: center;
+    h1: white;
 }
 
 /* 密码输入框部分样式 */
@@ -33,7 +34,7 @@ header {
 
 /* 主内容区域的标题样式 */
 h1, h2, h3 {
-    color: white;
+    color: #333;
 }
 
 /* 题目列表样式 */
