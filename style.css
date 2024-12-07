@@ -14,6 +14,9 @@ header {
     text-align: center;
     h1: white;
 }
+header h1 {
+    color: white;  /* 设置h1标签的文字颜色为白色 */
+}
 
 /* 密码输入框部分样式 */
 #passwordSection {
