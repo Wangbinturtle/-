@@ -5,6 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>高等数学竞赛题目征解</title>
     <link rel="stylesheet" href="style.css">
+    <script>
+        // 设置一个密码变量
+        const correctPassword = "calculus123"; // 这里可以设置你希望的密码
+
+        function checkPassword() {
+            const inputPassword = document.getElementById("password").value;
+            const contentDiv = document.getElementById("content");
+
+            if (inputPassword === correctPassword) {
+                // 如果密码正确，显示内容
+                contentDiv.style.display = "block";
+                document.getElementById("passwordForm").style.display = "none"; // 隐藏密码输入框
+            } else {
+                // 如果密码错误，显示提示信息
+                alert("密码错误，请重试！");
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -12,7 +30,16 @@
         <p>欢迎提交你的解题思路和答案！</p>
     </header>
 
-    <section id="problems">
+    <section id="passwordSection">
+        <h2>请输入密码以查看内容</h2>
+        <form id="passwordForm" onsubmit="event.preventDefault(); checkPassword();">
+            <label for="password">请输入密码:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="提交">
+        </form>
+    </section>
+
+    <section id="content" style="display: none;">
         <h2>竞赛题目</h2>
         <ul>
             <li>题目 1: <a href="problem1.html">查看解题讨论</a></li>
@@ -20,22 +47,13 @@
             <li>题目 3: <a href="problem3.html">查看解题讨论</a></li>
             <!-- 你可以继续添加更多题目 -->
         </ul>
-    </section>
 
-    <section id="submit">
-        <h2>提交解题方案</h2>
-        <p>如果你有解题思路，请提交你的方案和解析。</p>
-        <form action="https://github.com/YOUR-USERNAME/YOUR-REPOSITORY/issues" method="get">
-            <label for="problem">选择题目:</label>
-            <select name="problem" id="problem">
-                <option value="problem1">题目 1</option>
-                <option value="problem2">题目 2</option>
-                <option value="problem3">题目 3</option>
-            </select><br><br>
-            <label for="solution">提交方案:</label><br>
-            <textarea name="solution" id="solution" rows="4" cols="50"></textarea><br><br>
-            <input type="submit" value="提交">
-        </form>
+        <h3>答案提交说明</h3>
+        <ol>
+            <li><strong>答案提交截止日期：</strong>请在 2024年12月31日 之前提交答案。</li>
+            <li><strong>答案发送到邮箱：</strong>example@email.com。</li>
+            <li><strong>已率先提交的 20 份正确答案将进行评奖，评奖结果将通过社团微信群公布。</li>
+        </ol>
     </section>
 
     <footer>
@@ -43,3 +61,4 @@
     </footer>
 </body>
 </html>
+
